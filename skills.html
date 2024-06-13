@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .skill-main-div-first {
+        background-color: #424242;
+        width: 100vw;
+      }
+      .skill-container-one {
+        margin: 0 auto;
+        width: 1140px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* gap: 1rem; */
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+      .skill-image {
+        width: 50px;
+      }
+      .skill-one {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 15px;
+        padding: 10px;
+        background-color: black;
+      }
+      .skill-two {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 15px;
+        padding: 10px;
+        background-color: #424242;
+      }
+      .skill-title {
+        font-style: Inter;
+        color: white;
+      }
+      .title-again {
+        padding-left: 20px;
+      }
+      .skill-main-div-second {
+        background-color: #000000;
+        width: 100vw;
+      }
+      .skill-container-two {
+        margin: 0 auto;
+        width: 1140px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* gap: 1rem; */
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+      @media (max-width: 480px) {
+        .skill-container-one,
+        .skill-container-two {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+        .skill-title {
+          font-size: 50px;
+        }
+        .skill-image {
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="skill-main-div-first">
+      <div class="skill-container-one">
+        <div class="skill-one">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/wordpress-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">WordPress</p>
+        </div>
+        <div class="skill-two">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/aws-svgrepo-com-3.svg"
+            alt=""
+            class="skill-image title-again"
+          />
+          <p class="skill-title">AWS Cloud Computing</p>
+        </div>
+        <div class="skill-one">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/seo-search-symbol-svgrepo-com-1.svg"
+            alt=""
+            class="skill-image title-again"
+          />
+          <p class="skill-title">Search Engine Optimization</p>
+        </div>
+        <div class="skill-two">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/meta-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">Meta Marketing</p>
+        </div>
+        <div class="skill-one">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/marketing-mail-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">Digital Marketing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-main-div-second">
+      <div class="skill-container-two">
+        <div class="skill-two">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/analysis-analytics-business-chart-graph-growth-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">
+            Business Research <br />
+            & Analysis
+          </p>
+        </div>
+        <div class="skill-one">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/canva-svgrepo-com-1.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">Canva Design</p>
+        </div>
+        <div class="skill-two">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/html-124-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">HTML</p>
+        </div>
+        <div class="skill-one">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/css3-02-svgrepo-com-1.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">CSS</p>
+        </div>
+        <div class="skill-two">
+          <img
+            src="https://hello.mhrashed.com/wp-content/uploads/2024/06/elementor-svgrepo-com.svg"
+            alt=""
+            class="skill-image"
+          />
+          <p class="skill-title">WordPress Elementor</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

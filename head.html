@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <style>
+      body {
+        margin: 0 auto;
+        height: 100vh;
+        text-align: center;
+      }
+      .svg-one {
+        position: absolute;
+        left: -230px;
+        bottom: -8px;
+        transform: rotate(10deg);
+        width: 250px;
+      }
+      .svg-two {
+        position: absolute;
+        right: -240px;
+        bottom: -60px;
+        transform: rotate(7deg);
+      }
+      .header {
+        overflow: hidden;
+        background-color: black;
+      }
+
+      .header_content {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 2rem; */
+        position: relative;
+      }
+
+      /* .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--text-color);
+        text-decoration: none;
+        gap: 0.625rem;
+      } */
+
+      .logo-img-header {
+        height: 100px;
+      }
+
+      .nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        .nav {
+          display: flex;
+        }
+      }
+
+      .nav_link {
+        text-decoration: none;
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 600;
+        transform: color 0.1s;
+      }
+
+      .nav_link:hover {
+        color: rgb(137, 238, 137);
+      }
+
+      .contact_button {
+        text-decoration: none;
+        border: none;
+        border-radius: 25px;
+        background-color: white;
+        color: black;
+        transition: all 0.1s;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        z-index: 5;
+      }
+
+      .contact_button:hover {
+        background-color: #89ee89;
+      }
+
+      @media screen and (min-width: 768px) {
+        .contact_button {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <header class="header_content">
+        <img src="./Images/Group 1.svg" alt="" class="svg-one" />
+        <img src="./Images/Group 7.svg" alt="" class="svg-two" />
+        <a href="#" class="logo">
+          <img src="./Images/Rashed.svg" alt="" class="logo-img-header" />
+        </a>
+
+        <nav class="nav">
+          <a href="#home" class="nav_link">Home</a>
+          <a href="#feature" class="nav_link">Features</a>
+          <a href="#pricing" class="nav_link">Pricing</a>
+          <a href="#blog" class="nav_link">Blog</a>
+          <a href="#about" class="nav_link">About</a>
+          <a href="#contact" class="contact_button"> Contact </a>
+        </nav>
+      </header>
+    </div>
+  </body>
+</html>
