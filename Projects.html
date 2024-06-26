@@ -14,19 +14,41 @@
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
       }
-      .project-content{
-        height: ;
+      .project-content:hover{
+        
+      }
+      .pc-1:hover{
+        background-image: url(./Images/screencapture-m-baitsbd-2024-06-16-09_01_07.png);
+        background-size: cover;
+        position: relative;
+      }
+      .pc-2{
+        background-image: url(./Images/screencapture-mh-baitsbd-2024-06-16-08_58_24.png);
+        background-size: cover;
+        position: relative;
+      }
+      .pc-3:hover{
+        background-image: url(./Images/screencapture-nedubd-2024-06-16-08_59_23.png);
+        background-size: cover;
+        position: relative;
+      }
+      .pc-4:hover{
+        background-image: url(./Images/screencapture-mfirc-org-2024-06-16-08_58_39.png);
+        background-size: cover;
+        position: relative;
       }
       .number-highlight p{
         text-align: center;
         font-size: 150px;
       }
+      .number-highlight p:hover{
+        opacity: 0;
+      }
       .arrow-project{
         display: flex;
         gap: .5rem;
-        /* flex-grow: 0;
-        flex-shrink: 0; */
         align-items: start;
       }
       .arrow-project img{
@@ -39,34 +61,34 @@
   <body>
     <div class="the_main_container">
       <div class="main-container-content">
-        <div class="project-content">
+        <div class="project-content pc-1">
           <div class="number-highlight"><p>1</p></div>
           <div class="arrow-project">
-            <p>browse More</p>
+            <a href=""><p>browse more</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
-        <div class="project-content">
-          <div class="number-highlight"><p>1</p></div>
+        <div class="project-content pc-2">
+          <div class="number-highlight"><p>2</p></div>
           <div class="arrow-project">
-            <p>browse More</p>
+            <a href=""><p>browse more</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
-        <div class="project-content">
-          <div class="number-highlight"><p>1</p></div>
+        <div class="project-content pc-3">
+          <div class="number-highlight"><p>3</p></div>
           <div class="arrow-project">
-            <p>browse More</p>
+            <a href=""><p>browse more</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
-        <div class="project-content">
-          <div class="number-highlight"><p>1</p></div>
+        <div class="project-content pc-4">
+          <div class="number-highlight"><p>4</p></div>
           <div class="arrow-project">
-            <p>browse More</p>
+            <a href=""><p>browse more</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
