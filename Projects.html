@@ -7,7 +7,6 @@
     <style>
       .the_main_container {
         margin: 0 auto;
-        /* width: 100%; */
       }
       .main-container-content {
         width: 1140px;
@@ -16,27 +15,29 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 1.2rem;
       }
-      .project-content:hover {
-      }
-      .pc-1 {
+      .project-content {
         position: relative;
+        overflow: hidden;
       }
-      .pc-2 {
-        position: relative;
+      .project-content:hover .gradiant {
+        display: block;
+      }
+      .project-content:hover .number-highlight {
+        opacity: 0;
       }
       .pc-1:hover {
         background-image: url(./Images/screencapture-m-baitsbd-2024-06-16-09_01_07.png);
         background-size: cover;
       }
       .gradiant {
+        display: none;
         position: absolute;
         top: 0;
         right: 0;
-        background: rgb(255, 255, 255);
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0) 74%,
-          rgba(48, 47, 59, 0.7764355742296919) 100%
+          rgba(48, 47, 59, 0.776) 100%
         );
         width: 100%;
         height: 100%;
@@ -61,24 +62,26 @@
         position: relative;
       }
       .number-highlight {
+        position: relative;
+        z-index: 999;
+        transition: opacity 0.3s ease; /* Smooth transition */
       }
       .number-highlight p {
         text-align: center;
         font-size: 150px;
-        z-index: 999;
-      }
-      .number-highlight p:hover {
-        opacity: 0;
       }
       .about-project {
         color: red;
         font-size: 18px;
+        position: relative;
         z-index: 99999;
       }
       .arrow-project {
         display: flex;
         gap: 0.5rem;
         align-items: start;
+        position: relative;
+        z-index: 99999;
       }
       .arrow-project img {
         width: 15px;
@@ -90,6 +93,7 @@
       }
       .arrow-project a {
         text-decoration: none;
+        color: inherit; /* Ensures the link color matches the surrounding text */
       }
     </style>
   </head>
