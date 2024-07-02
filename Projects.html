@@ -34,14 +34,18 @@
         position: absolute;
         top: 0;
         right: 0;
+        background: rgb(255, 255, 255);
         background: linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0) 74%,
-          rgba(48, 47, 59, 0.776) 100%
+          rgba(255, 255, 255, 0) 66%,
+          rgba(0, 0, 0, 1) 100%
         );
         width: 100%;
         height: 100%;
         z-index: 111;
+      }
+      .project-content:hover .arrow-project a {
+        color: white;
       }
       .pc-2 {
         background-image: url(./Images/screencapture-mh-baitsbd-2024-06-16-08_58_24.png);
@@ -71,10 +75,13 @@
         font-size: 150px;
       }
       .about-project {
-        color: red;
+        font-family: "Times New Roman", Times, serif;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
         font-size: 18px;
         position: relative;
         z-index: 99999;
+        margin-left: 10px;
       }
       .arrow-project {
         display: flex;
@@ -93,7 +100,8 @@
       }
       .arrow-project a {
         text-decoration: none;
-        color: inherit; /* Ensures the link color matches the surrounding text */
+        color: rgb(0, 0, 0);
+        margin-left: 10px;
       }
     </style>
   </head>
