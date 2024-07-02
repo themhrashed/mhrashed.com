@@ -9,52 +9,87 @@
         margin: 0 auto;
         /* width: 100%; */
       }
-      .main-container-content{
+      .main-container-content {
         width: 1140px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.2rem;
       }
-      .project-content:hover{
-        
+      .project-content:hover {
       }
-      .pc-1:hover{
+      .pc-1 {
+        position: relative;
+      }
+      .pc-2 {
+        position: relative;
+      }
+      .pc-1:hover {
         background-image: url(./Images/screencapture-m-baitsbd-2024-06-16-09_01_07.png);
         background-size: cover;
-        position: relative;
       }
-      .pc-2{
+      .gradiant {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 74%,
+          rgba(48, 47, 59, 0.7764355742296919) 100%
+        );
+        width: 100%;
+        height: 100%;
+        z-index: 111;
+      }
+      .pc-2 {
         background-image: url(./Images/screencapture-mh-baitsbd-2024-06-16-08_58_24.png);
         background-size: cover;
-        position: relative;
       }
-      .pc-3:hover{
+      .pc-3:hover {
         background-image: url(./Images/screencapture-nedubd-2024-06-16-08_59_23.png);
         background-size: cover;
+      }
+      .pc-3 {
         position: relative;
       }
-      .pc-4:hover{
+      .pc-4:hover {
         background-image: url(./Images/screencapture-mfirc-org-2024-06-16-08_58_39.png);
         background-size: cover;
+      }
+      .pc-4 {
         position: relative;
       }
-      .number-highlight p{
+      .number-highlight {
+      }
+      .number-highlight p {
         text-align: center;
         font-size: 150px;
+        z-index: 999;
       }
-      .number-highlight p:hover{
+      .number-highlight p:hover {
         opacity: 0;
       }
-      .arrow-project{
+      .about-project {
+        color: red;
+        font-size: 18px;
+        z-index: 99999;
+      }
+      .arrow-project {
         display: flex;
-        gap: .5rem;
+        gap: 0.5rem;
         align-items: start;
       }
-      .arrow-project img{
-        width: 10px;
+      .arrow-project img {
+        width: 15px;
         transform: rotate(-45deg);
-        margin-top: 21px;
+        margin-top: 32px;
+      }
+      .arrow-project p {
+        font-size: 25px;
+      }
+      .arrow-project a {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -62,33 +97,41 @@
     <div class="the_main_container">
       <div class="main-container-content">
         <div class="project-content pc-1">
+          <div class="gradiant"></div>
           <div class="number-highlight"><p>1</p></div>
+          <div><p class="about-project">Madrasa Website</p></div>
           <div class="arrow-project">
-            <a href=""><p>browse more</p></a>
+            <a href=""><p>visit</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
         <div class="project-content pc-2">
+          <div class="gradiant"></div>
           <div class="number-highlight"><p>2</p></div>
+          <div><p class="about-project">Service Company</p></div>
           <div class="arrow-project">
-            <a href=""><p>browse more</p></a>
+            <a href=""><p>visit</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
         <div class="project-content pc-3">
+          <div class="gradiant"></div>
           <div class="number-highlight"><p>3</p></div>
+          <div><p class="about-project">Education Management Website</p></div>
           <div class="arrow-project">
-            <a href=""><p>browse more</p></a>
+            <a href=""><p>visit</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
 
         <div class="project-content pc-4">
+          <div class="gradiant"></div>
           <div class="number-highlight"><p>4</p></div>
+          <div><p class="about-project">Journal Website</p></div>
           <div class="arrow-project">
-            <a href=""><p>browse more</p></a>
+            <a href=""><p>visit</p></a>
             <img src="./Images/right.png" alt="" />
           </div>
         </div>
