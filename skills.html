@@ -5,77 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        margin: 0 auto;
-        overflow: hidden;
+      /* General Styles */
+      .elementor-widget-image img {
+        vertical-align: middle;
+        display: inline-block;
+        filter: saturate(0);
       }
-      .skill-main-div-first {
-        background-color: #424242;
-        width: 100vw;
+
+      .elementor-widget-image img:hover {
+        vertical-align: middle;
+        display: inline-block;
+        filter: saturate(1);
       }
-      .skill-container-one {
-        margin: 0 auto;
-        width: 1140px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        /* gap: 1rem; */
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-      }
-      .skill-image {
-        width: 50px;
-      }
-      .skill-one {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        gap: 15px;
-        padding: 10px;
-        background-color: black;
-      }
-      .skill-two {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        gap: 15px;
-        padding: 10px;
-        background-color: #424242;
-      }
-      .skill-title {
-        font-style: Inter;
-        color: white;
-      }
-      .title-again {
-        padding-left: 20px;
-      }
+
+      .skill-main-div-first,
       .skill-main-div-second {
-        background-color: #000000;
-        width: 100vw;
+        background-color: #424242;
+        /* width: 100vw; */
       }
+
+      .skill-container-one,
       .skill-container-two {
         margin: 0 auto;
         width: 1140px;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        /* gap: 1rem; */
+        gap: 1rem;
         align-items: center;
         justify-content: center;
-        padding: 10px;
       }
-      @media (max-width: 480px) {
+
+      .skill-one,
+      .skill-two {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 100%;
+        gap: 15px;
+        padding: 30px;
+        transition: transform 0.3s;
+      }
+
+      .skill-one {
+        background-color: black;
+      }
+
+      .skill-one:hover,
+      .skill-two:hover {
+        transform: scale(1.1);
+      }
+
+      .skill-two {
+        background-color: #424242;
+      }
+
+      .skill-image {
+        width: 45px;
+      }
+
+      .icon-elementor {
+        width: 50px;
+      }
+
+      .skill-title {
+        margin-top: 20px;
+        font-family: "Inter", sans-serif;
+        color: white;
+        font-size: 12px;
+      }
+
+      .title-again {
+        width: 70px;
+        padding-left: 20px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .skill-container-one,
+        .skill-container-two {
+          width: 90%;
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .skill-container-one,
+        .skill-container-two {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .skill-container-one,
+        .skill-container-two {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 576px) {
         .skill-container-one,
         .skill-container-two {
           grid-template-columns: 1fr;
-          gap: 0.5rem;
-        }
-        .skill-title {
-          font-size: 50px;
         }
         .skill-image {
-          width: 100px;
+          width: 35px;
+        }
+        .skill-title {
+          font-size: 10px;
         }
       }
     </style>
