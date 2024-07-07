@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get a Quote</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #218838;
+      }
+
+      #quoteResult {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Get a Quote</h2>
+      <form id="quoteForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="service">Service:</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option value="school_management_system">
+            School Management System
+          </option>
+          <option value="website_creation">Website Creation</option>
+          <option value="account_management_system">
+            Account Management System
+          </option>
+          <option value="point_of_sales">Point of Sales</option>
+        </select>
+
+        <label for="details">Details:</label>
+        <textarea id="details" name="details" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="quoteResult"></div>
+    </div>
+    <script src="script.js">
+      document.getElementById('quoteForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const phone = document.getElementById('phone').value;
+              const service = document.getElementById('service').value;
+              const details = document.getElementById('details').value;
+
+              let formData = new FormData();
+              formData.append('name', name);
+              formData.append('email', email);
+              formData.append('phone', phone);
+              formData.append('service', service);
+              formData.append('details', details);
+
+              fetch('sendEmail.php', {
+                  method: 'POST',
+                  body: formData
+              })
+              .then(response => response.text())
+              .then(result => {
+                  if (result === 'success') {
+                      document.getElementById('quoteResult').innerHTML = "<p>Your quote request has been successfully submitted!</p>";
+                      document.getElementById('quoteForm').reset(); // Optional: Reset the form after submission
+                  } else {
+                      document.getElementById('quoteResult').innerHTML = "<p>There was an error submitting your quote request. Please try again later.</p>";
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  document.getElementById('quoteResult').innerHTML = "<p>There was a network error submitting your quote request. Please try again later.</p>";
+              });
+          });
+    </script>
+  </body>
+</html>
