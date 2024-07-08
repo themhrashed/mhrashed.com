@@ -19,13 +19,113 @@
         margin: 50px auto;
         width: 1140px;
       }
-      .contact_content p {
+
+      .hero_div_contact p {
         color: white;
         font-family: "Inter", sans-serif;
-        font-size: 90px;
+        font-size: 70px;
+        font-weight: 600;
       }
       .hero_div_contact {
-        margin-left: 180px;
+        margin-top: 30px;
+        margin-left: 120px;
+        margin-bottom: 0px;
+      }
+      .contact_description {
+        margin-top: 50px;
+        color: white;
+        font-size: 20px;
+      }
+
+      .contact_icon_des {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        margin: 0 !important;
+        padding: 10px;
+      }
+      .contact_icon_des img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .contact_description_form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* padding: 0rem 12rem; */
+        margin-left: 120px;
+        margin-right: 120px;
+        padding-bottom: 70px;
+      }
+
+      .contact_form {
+        background-color: transparent;
+        /* padding: 20px; */
+        /* border-radius: 5px; */
+      }
+      .form_contact {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .habijabi label {
+        font-family: "Inter", sans-serif;
+        color: white;
+        display: block;
+        margin-top: 5px;
+        font-size: 15px;
+      }
+      .habijabi input[type="text"],
+      .habijabi textarea {
+        font-family: "Inter", sans-serif;
+        color: #fff;
+        width: 100%;
+        padding: 15px 0px;
+        border: 0;
+        border-bottom: 1px solid white;
+        background-color: transparent;
+        outline: none;
+      }
+      .habijabi input:focus {
+        outline: none;
+      }
+      .submit_contact input[type="submit"] {
+        font-family: "Inter", sans-serif;
+        width: 100%;
+        padding: 16px 0px;
+        background-color: transparent;
+        border: 0.7px solid white;
+        color: #000;
+        font-size: 16px;
+        text-align: center;
+        margin: 20px 0px;
+        background: white;
+      }
+      .submit_contact input[type="submit"]:hover {
+        font-family: "Inter", sans-serif;
+        background: rgb(41, 163, 122);
+        background: linear-gradient(
+          74deg,
+          rgba(41, 163, 122, 1) 0%,
+          rgba(0, 69, 46, 1)  100%
+        );
+        color: black;
+        text-align: center;
+        transition: all 0.2s ease-in;
+      }
+      .social_icon_contact {
+        margin-top: 30px;
+        display: flex;
+        padding: 10px;
+        gap: 1.5rem;
+      }
+      .social_icon img {
+        width: 35px;
+        height: 35px;
+      }
+      .social_icon img:hover {
+        transition: all 0.1s ease-in;
+        transform: scale(1.5);
       }
     </style>
   </head>
@@ -33,16 +133,82 @@
     <div class="contact_container">
       <div class="contact_content">
         <div class="hero_div_contact">
-          <div>
-            Stay <br />
-            Connected
-          </div>
+          <p>Let's Chat</p>
         </div>
         <div class="contact_description_form">
-          <div class="contact_description"></div>
-          <div class="contact_form"></div>
+          <div class="contact_description">
+            <div class="contact_icon_des">
+              <img src="./Images/address-svgrepo-com.svg" alt="" />
+              <span>Dhaka, Bangladesh</span>
+            </div>
+            <div class="contact_icon_des">
+              <img src="./Images/phone-svgrepo-com.svg" alt="" />
+              <span>+8801972051101</span>
+            </div>
+            <div class="contact_icon_des">
+              <img src="./Images/mail-svgrepo-com (4).svg" alt="" />
+              <span>hello@mhrashed.com</span>
+            </div>
+            <div class="social_icon_contact">
+              <div class="social_icon">
+                <a href="#"
+                  ><img src="./Images/facebook-svgrepo-com.svg" alt=""
+                /></a>
+              </div>
+              <div class="social_icon">
+                <a href="#"
+                  ><img src="./Images/instagram-svgrepo-com.svg" alt=""
+                /></a>
+              </div>
+              <div class="social_icon">
+                <a href="#"
+                  ><img src="./Images/linkedin-svgrepo-com.svg" alt=""
+                /></a>
+              </div>
+              <div class="social_icon">
+                <a href="#"
+                  ><img src="./Images/github-square-svgrepo-com.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="contact_form">
+            <form action="" class="form_contact">
+              <div class="habijabi">
+                <!-- <label for="name">Name</label> <br /> -->
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                />
+                <br />
+              </div>
+              <div class="habijabi">
+                <!-- <label for="mail">Mail</label> <br /> -->
+                <input
+                  type="text"
+                  id="mail"
+                  name="mail"
+                  placeholder="Your Mail"
+                />
+                <br />
+              </div>
+              <div class="habijabi">
+                <!-- <label for="message">Comment or Message</label> <br /> -->
+                <textarea
+                  name="message"
+                  placeholder="Comment or Message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="submit_contact">
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="social_icon_contact"></div>
       </div>
     </div>
   </body>
