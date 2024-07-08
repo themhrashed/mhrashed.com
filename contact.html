@@ -129,6 +129,38 @@
         transform: scale(1.5);
       }
     </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("v2JZqqp548Myh-hC3");
+      })();
+
+      function sendMail(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const form = event.target;
+        console.log("Form Data:");
+        console.log("Name:", form.name.value);
+        console.log("Email:", form.mail.value);
+        console.log("Message:", form.message.value);
+
+        emailjs.sendForm("service_ntzuggp", "template_g18zrra", form).then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Your message has been sent!");
+          },
+          function (error) {
+            console.log("FAILED...", error);
+            alert("Failed to send your message. Please try again later.");
+          }
+        );
+
+        return false; // Prevent the form from reloading the page
+      }
+    </script>
   </head>
   <body>
     <div class="contact_container">
@@ -174,9 +206,8 @@
             </div>
           </div>
           <div class="contact_form">
-            <form action="" class="form_contact">
+            <form onsubmit="sendMail(event)" class="form_contact">
               <div class="habijabi">
-                <!-- <label for="name">Name</label> <br /> -->
                 <input
                   type="text"
                   id="name"
@@ -186,7 +217,6 @@
                 <br />
               </div>
               <div class="habijabi">
-                <!-- <label for="mail">Mail</label> <br /> -->
                 <input
                   type="text"
                   id="mail"
@@ -196,7 +226,6 @@
                 <br />
               </div>
               <div class="habijabi">
-                <!-- <label for="message">Comment or Message</label> <br /> -->
                 <textarea
                   name="message"
                   placeholder="Comment or Message"
