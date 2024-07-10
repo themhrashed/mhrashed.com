@@ -47,6 +47,7 @@
         border-bottom: 1px solid white;
         background-color: transparent;
         outline: none;
+        margin-bottom: 25px;
       }
       .label_q_q p {
         margin-top: 25px;
@@ -147,14 +148,129 @@
         border-width: 0 2px 2px 0;
         transform: rotate(45deg);
       }
+      @media (max-width: 768px) {
+        .quote_content {
+          width: 90%;
+          margin: 20px auto;
+        }
+
+        .h2_quote p {
+          width: 100%;
+          padding: 0;
+          font-size: 30px;
+        }
+
+        .form_quote {
+          padding: 0;
+          width: 100%;
+        }
+
+        .input_quote input[type="text"],
+        .input_quote textarea,
+        .website_address_q input[type="text"],
+        .input_quote input[type="date"] {
+          font-size: 14px;
+          padding: 10px 0px;
+        }
+
+        .label_q_q p {
+          font-size: 16px;
+        }
+
+        .label_q {
+          font-size: 20px;
+        }
+
+        .input_quote_a {
+          font-size: 14px;
+        }
+
+        .submit_contact input[type="submit"] {
+          width: 100%;
+          padding: 12px 0px;
+          font-size: 14px;
+        }
+      }
     </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("v2JZqqp548Myh-hC3");
+      })();
+
+      function sendQuote(event) {
+        event.preventDefault(); // Prevent the default form submission
+        console.log("first");
+
+        const form = event.target;
+        console.log("Form Data:");
+        console.log("Name:", form["name-q"].value);
+        console.log("Phone:", form["phone-q"].value);
+        console.log("Email:", form["email-q"].value);
+        console.log("Date:", form["date"].value);
+        console.log("SEO Services:", form["seo-services-q"].checked);
+        console.log("Digital Marketing:", form["meta-marketing-q"].checked);
+        console.log("WordPress Development:", form["wp-web-q"].checked);
+        console.log(
+          "Website:",
+          form["website-q"] ? form["website-q"].value : "N/A"
+        );
+        console.log("Message:", form.message.value);
+
+        emailjs.sendForm("service_vu5fkgc", "template_5234q3f", form).then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert(
+              "Your quote request has been sent! You will get a response ASAP!"
+            );
+          },
+          function (error) {
+            console.log("FAILED...", error);
+            alert("Failed to send your quote request. Please try again later.");
+          }
+        );
+
+        return false; // Prevent the form from reloading the page
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const seoCheckbox = document.getElementById("seoservicesq");
+        const seoCheckboxContainer = seoCheckbox.parentElement;
+
+        // Create the sub-input field for website address
+        const websiteAddressInput = document.createElement("div");
+        websiteAddressInput.className = "website_address_q";
+        websiteAddressInput.innerHTML = `
+            <input type="text" id="websiteq" name="website-q" placeholder="Website Address" />
+          `;
+        websiteAddressInput.style.display = "none"; // Hide initially
+
+        // Insert the sub-input field immediately after the SEO Services checkbox
+        seoCheckboxContainer.insertAdjacentElement(
+          "afterend",
+          websiteAddressInput
+        );
+
+        // Add event listener to the checkbox
+        seoCheckbox.addEventListener("change", function () {
+          if (this.checked) {
+            websiteAddressInput.style.display = "block";
+          } else {
+            websiteAddressInput.style.display = "none";
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="quote_container">
       <div class="quote_content">
         <div class="h2_quote"><p>Get a Quote</p></div>
         <div class="form_quote">
-          <form action="">
+          <form onsubmit="sendQuote(event)">
             <div class="name_q input_quote">
               <input
                 type="text"
@@ -182,10 +298,10 @@
               />
             </div>
             <div class="time_q input_quote">
-              <label for="dateq" class="label_q_q"
+              <label for="date" class="label_q_q"
                 ><p>When Should I Knock?</p></label
               >
-              <input type="date" id="dateq" required />
+              <input type="date" id="date" name="date" required />
             </div>
             <div class="checkbox_quote">
               <fieldset>
@@ -234,35 +350,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const seoCheckbox = document.getElementById("seoservicesq");
-        const seoCheckboxContainer = seoCheckbox.parentElement;
-
-        // Create the sub-input field for website address
-        const websiteAddressInput = document.createElement("div");
-        websiteAddressInput.className = "website_address_q";
-        websiteAddressInput.innerHTML = `
-    <input type="text" id="websiteq" name="website-q" placeholder="Website Address" />
-  `;
-        websiteAddressInput.style.display = "none"; // Hide initially
-
-        // Insert the sub-input field immediately after the SEO Services checkbox
-        seoCheckboxContainer.insertAdjacentElement(
-          "afterend",
-          websiteAddressInput
-        );
-
-        // Add event listener to the checkbox
-        seoCheckbox.addEventListener("change", function () {
-          if (this.checked) {
-            websiteAddressInput.style.display = "block";
-          } else {
-            websiteAddressInput.style.display = "none";
-          }
-        });
-      });
-    </script>
   </body>
 </html>
